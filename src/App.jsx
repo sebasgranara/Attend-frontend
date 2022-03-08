@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import Protected from './pages/Protected';
 import SignupPage from './pages/SignupPage';
+import EventsList from './pages/EventsList';
+import EventAdd from './pages/EventAdd';
 
 function App() {
   return (
@@ -38,6 +40,9 @@ function App() {
             </IsAnon>
           }
         />
+        <Route path="/events" element={<EventsList />} />
+        <Route path="/events/add" element={<EventAdd />} />
+
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
     </AuthProviderWrapper>

@@ -36,6 +36,27 @@ class ApiService {
     // same as
     // return axios.post("http://localhost:5005/auth/verify");
   };
+
+  // Events
+  getAllEvents = () => {
+    return this.api.get('/api/events');
+  };
+
+  getEventById = eventId => {
+    return this.api.get(`/api/events/${eventId}`);
+  };
+
+  addEvent = body => {
+    return this.api.post('/api/events', body);
+  };
+
+  editEvent = (eventId, body) => {
+    return this.api.put(`/api/events/${eventId}`, body);
+  };
+
+  deleteEvent = eventId => {
+    return this.api.delete(`/api/${eventId}`);
+  };
 }
 
 // Create one instance (object) of the service

@@ -21,7 +21,7 @@ function LoginPage() {
 
     login(requestBody)
       .then(() => {
-        navigate('/');
+        navigate('/events');
       })
       .catch(error => {
         const errorDescription = error.response.data.message;
@@ -31,7 +31,8 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
+      <h1>Attend</h1>
+      <h3>Login to access your EVENTS </h3>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>

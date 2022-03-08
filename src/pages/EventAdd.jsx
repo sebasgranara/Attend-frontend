@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import apiService from '../services/api.service';
 
+
 function EventAdd() {
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('');

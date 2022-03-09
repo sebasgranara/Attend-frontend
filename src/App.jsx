@@ -10,6 +10,7 @@ import SignupPage from './pages/SignupPage';
 import EventsList from './pages/EventsList';
 import EventAdd from './pages/EventAdd';
 import EventDetails from './pages/EventDetails';
+import EventEdit from './pages/EventEdit';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
         <Route path="/events" element={<EventsList />} />
         <Route path="/events/add" element={<EventAdd />} />
         <Route path="/events/:id" element={<EventDetails />} />
-        {/* <Route path="/events/:id/edit" element={<EventEdit />} /> */}
+        <Route path="/events/:id/edit" element={<EventEdit />} />
 
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>

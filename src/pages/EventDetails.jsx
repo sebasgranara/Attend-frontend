@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 
 function EventDetails(){
   const { eventId } = useParams();
-  const [event, setEvent] = useState([])
+  const [event, setEvent] = useState({})
 
  useEffect(() => {
    apiService
@@ -30,9 +30,12 @@ function EventDetails(){
        <p>Ticket Purchased: {event.ticektPurchased}</p>
        <p>Event Hour: {event.eventHour}</p>
        <Link to={`/events/${event._id}/edit`}>Edit event</Link>
+       <Link to="/events"> Back to events list</Link>      
      </div>
    </div>
  );
 }
+// Navbar para el "back to events collection"
 
 export default EventDetails
+

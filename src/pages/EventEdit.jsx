@@ -23,9 +23,9 @@ function EventEdit() {
        setEvent(response.data);
      })
      .catch(err => {
-       console.log(err); //confirmar error
+       console.log(err);
      });
- }, []);
+ }, [eventId]);
 
   const handleChange = e => {
     setEvent(prev => {
@@ -52,15 +52,11 @@ function EventEdit() {
       })
       .then(response => {
         console.log(response);
-        navigate('/events'); //que vaya al event details {`/events/${event._id}`}
+        navigate(`/events/${event._id}`); 
       })
       .catch(error => console.log(error));
   };
 
-
-    
-
-//ver tema de dropdown: category, ticketPrice y tmb date
 return (
   <div>
     <h2> Edit this event</h2>
@@ -103,10 +99,10 @@ return (
         <option value="Free">Free</option>
       </select>
 
-      <h2>Event Hour:</h2>
-      <input type="number" value={event.eventHour} name="eventHour" onChange={handleChange}></input>
+      {/* <h2>Event Hour:</h2>
+      <input type="number" value={event.eventHour} name="eventHour" onChange={handleChange}></input> */}
 
-      <button type="submit">Edit Event</button>
+      <button type="submit">Save Changes</button>
 
       <Link to="/events"> Back to events list</Link>
     </form>

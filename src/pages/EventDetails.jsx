@@ -36,9 +36,9 @@ function EventDetails() {
         <p>Category: {event.category}</p>
         <p>Date: {new Date(event.date).toLocaleDateString()}</p>
         <p>City: {event.city}</p>
-        <p>Ticket Price: {event.ticketPrice}</p>
+        <p>Ticket Price: {event.ticketPrice} €</p>
         <p>Priority: {event.priority}</p>
-        <p>Ticket Purchased: {event.ticektPurchased}</p>
+        <p>Ticket Purchased: {event.ticketPurchased}</p>
         <p>Event Hour: {new Date(event.date).toLocaleTimeString()}</p>
         <Link to={`/events/${event._id}/edit`}>Edit event</Link>
         <button onClick={deleteEvent}>Delete Event</button>
@@ -49,5 +49,6 @@ function EventDetails() {
   );
 }
 // Navbar para el "back to events collection"
+
 
 export default EventDetails;

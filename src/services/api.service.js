@@ -55,7 +55,7 @@ class ApiService {
   };
 
   deleteEvent = eventId => {
-    return this.api.delete(`/api/${eventId}`);
+    return this.api.delete(`/api/events/${eventId}`);
   };
 }
 

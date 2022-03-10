@@ -34,6 +34,7 @@ function EventAdd() {
       .catch(e => console.log(e));
   };
 
+  
   //ver tema de dropdown: category, ticketPrice y tmb date
 
   return (
@@ -61,12 +62,8 @@ function EventAdd() {
         <input type="text" value={city} name="city" onChange={e => setCity(e.target.value)}></input>
 
         <h2>Ticket Price:</h2>
-        <input
-          type="number"
-          value={ticketPrice}
-          name="ticketPrice"
-          onChange={e => setTicketPrice(e.target.value)}
-        ></input>
+        <input type="number" value={ticketPrice} name="ticketPrice" onChange={e => setTicketPrice(e.target.value)}>
+        </input>
 
         <h2>Priority:</h2>
         <select name="priority" value={priority} onChange={e => setPriority(e.target.value)}>
@@ -78,8 +75,8 @@ function EventAdd() {
 
         <h2>Ticket Purchased:</h2>
         <select name="ticketPurchased" value={ticketPurchased} onChange={e => setTicketPurchased(e.target.value)}>
-          <option value="Yes">Yes</option>
           <option value="No">No</option>
+          <option value="Yes">Yes</option>
           <option value="Free">Free</option>
         </select>
 

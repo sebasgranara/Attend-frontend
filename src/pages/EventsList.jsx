@@ -16,10 +16,11 @@ function EventsList() {
       });
   }, []);
 
+  //si ticketPurchased: No => pintarlo de rojo
   return (
     <div>
       <h1>Upcoming Events</h1>
-     
+
       {events.map(event => {
         return (
           <div key={event._id}>
@@ -27,6 +28,7 @@ function EventsList() {
               <h2>{event.title}</h2>
               <h3>Date: {new Date(event.date).toLocaleDateString()}</h3>
               <h3>Where: {event.city}</h3>
+              <h3>Ticket Purchased? {event.ticketPurchased}</h3>
             </Link>
           </div>
         );

@@ -49,8 +49,22 @@ function App() {
             </IsPrivate>
           }
         />
-        <Route path="/events/:eventId" element={<IsPrivate><EventDetails /></IsPrivate>} />
-        <Route path="/events/:eventId/edit" element={<EventEdit />} />
+        <Route
+          path="/events/:eventId"
+          element={
+            <IsPrivate>
+              <EventDetails />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/events/:eventId/edit"
+          element={
+            <IsPrivate>
+              <EventEdit />
+            </IsPrivate>
+          }
+        />
 
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>

@@ -8,9 +8,8 @@ function EventAdd() {
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');
   const [ticketPrice, setTicketPrice] = useState('');
-  const [priority, setPriority] = useState('');
-  const [ticketPurchased, setTicketPurchased] = useState('');
-  /*  const [eventHour, setEventHour] = useState(''); */
+  const [priority, setPriority] = useState('High');
+  const [ticketPurchased, setTicketPurchased] = useState('No');
 
   const navigate = useNavigate();
 
@@ -33,9 +32,6 @@ function EventAdd() {
       })
       .catch(e => console.log(e));
   };
-
-  
-  //ver tema de dropdown: category, ticketPrice y tmb date
 
   return (
     <div>
@@ -62,15 +58,18 @@ function EventAdd() {
         <input type="text" value={city} name="city" onChange={e => setCity(e.target.value)}></input>
 
         <h2>Ticket Price:</h2>
-        <input type="number" value={ticketPrice} name="ticketPrice" onChange={e => setTicketPrice(e.target.value)}>
-        </input>
+        <input
+          type="number"
+          value={ticketPrice}
+          name="ticketPrice"
+          onChange={e => setTicketPrice(e.target.value)}
+        ></input>
 
         <h2>Priority:</h2>
         <select name="priority" value={priority} onChange={e => setPriority(e.target.value)}>
-          <option value="Top Priority">Top Priority</option>
-          <option value="Must Go">Must Go</option>
-          <option value="Maybe">Maybe</option>
-          <option value="If Nothing Better To Do">If Nothing Better To Do</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
         </select>
 
         <h2>Ticket Purchased:</h2>
@@ -80,10 +79,6 @@ function EventAdd() {
           <option value="Free">Free</option>
         </select>
 
-        {/*  <h2>Event Hour:</h2>
-        <input type="time" value={eventHour} name="eventHour" onChange={e => setEventHour(e.target.value)}></input>
-
-        */}
         <button>New Event</button>
       </form>
     </div>

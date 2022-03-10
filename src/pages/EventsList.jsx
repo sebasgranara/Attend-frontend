@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import apiService from '../services/api.service';
+import { AuthContext } from './../context/auth.context';
 
 function EventsList() {
   const [events, setEvents] = useState([]);
-
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     apiService
       .getAllEvents()
@@ -19,7 +20,9 @@ function EventsList() {
   //si ticketPurchased: No => pintarlo de rojo
   return (
     <div>
-      <h1>Upcoming Events</h1>
+      <h1>Welcome {user && user.name}</h1>
+      
+      <h2>Upcoming Events</h2>
 
       {events.map(event => {
         return (

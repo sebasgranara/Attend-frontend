@@ -86,10 +86,9 @@ return (
 
       <h2>Priority:</h2>
       <select name="priority" value={event.priority} onChange={handleChange}>
-        <option value="Top Priority">Top Priority</option>
-        <option value="Must Go">Must Go</option>
-        <option value="Maybe">Maybe</option>
-        <option value="If Nothing Better To Do">If Nothing Better To Do</option>
+        <option value="High">Top Priority</option>
+        <option value="Medium">Must Go</option>
+        <option value="Low">Maybe</option>
       </select>
 
       <h2>Ticket Purchased:</h2>
@@ -98,9 +97,6 @@ return (
         <option value="No">No</option>
         <option value="Free">Free</option>
       </select>
-
-      {/* <h2>Event Hour:</h2>
-      <input type="number" value={event.eventHour} name="eventHour" onChange={handleChange}></input> */}
 
       <button type="submit">Save Changes</button>
 

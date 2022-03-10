@@ -57,15 +57,8 @@ function EventEdit() {
       .catch(error => console.log(error));
   };
 
-  // const deleteProject = () => {
-  //   axios
-  //     .delete(`${API_URL}/api/projects/${projectId}`)
-  //     .then(() => {
-       
-  //       props.history.push('/projects');
-  //     })
-  //     .catch(err => console.log(err));
-  // };  
+
+    
 
 //ver tema de dropdown: category, ticketPrice y tmb date
 return (
@@ -76,15 +69,18 @@ return (
       <input type="text" value={event.title} name="title" onChange={handleChange}></input>
 
       <h2>Category:</h2>
-      <input type="text" value={event.category} name="category" onChange={handleChange}></input>
+      <select name="category" value={event.category} onChange={handleChange}>
+        <option value="Festival">Festival</option>
+        <option value="Business">Business</option>
+        <option value="Sports">Sports</option>
+        <option value="Wellness">Wellness</option>
+        <option value="Cultural">Cultural</option>
+        <option value="Personal">Personal</option>
+        <option value="Other">Other</option>
+      </select>
 
       <h2>Date:</h2>
-      <input
-        type="number" //confirmar type
-        value={event.date}
-        name="date"
-        onChange={handleChange}
-      ></input>
+      <input type="datetime-local" value={event.date} name="date" onChange={handleChange}></input>
 
       <h2>City:</h2>
       <input type="text" value={event.city} name="city" onChange={handleChange}></input>
@@ -93,15 +89,25 @@ return (
       <input type="number" value={event.ticketPrice} name="ticketPrice" onChange={handleChange}></input>
 
       <h2>Priority:</h2>
-      <input type="text" value={event.priority} name="priority" onChange={handleChange}></input>
+      <select name="priority" value={event.priority} onChange={handleChange}>
+        <option value="Top Priority">Top Priority</option>
+        <option value="Must Go">Must Go</option>
+        <option value="Maybe">Maybe</option>
+        <option value="If Nothing Better To Do">If Nothing Better To Do</option>
+      </select>
 
       <h2>Ticket Purchased:</h2>
-      <input type="text" value={event.ticketPurchased} name="ticketPurchased" onChange={handleChange}></input>
+      <select name="ticketPurchased" value={event.ticketPurchased} onChange={handleChange}>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="Free">Free</option>
+      </select>
 
       <h2>Event Hour:</h2>
       <input type="number" value={event.eventHour} name="eventHour" onChange={handleChange}></input>
 
       <button type="submit">Edit Event</button>
+
       <Link to="/events"> Back to events list</Link>
     </form>
   </div>

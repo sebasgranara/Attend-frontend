@@ -24,10 +24,12 @@ function EventsList() {
         return (
           <div key={event._id}>
             <Link to={`/events/${event._id}`}>
-            <h2>{event.title}</h2>
+              <h2>{event.title}</h2>
+              <h3>Date: {new Date(event.date).toLocaleDateString()}</h3>
+              <h3>Where: {event.city}</h3>
             </Link>
           </div>
-        )
+        );
       })}
     </div>
   );

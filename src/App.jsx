@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import { AuthProviderWrapper } from './context/auth.context';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
-import Protected from './pages/Protected';
 import SignupPage from './pages/SignupPage';
 import EventsList from './pages/EventsList';
 import EventAdd from './pages/EventAdd';
@@ -18,14 +17,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/protected"
-          element={
-            <IsPrivate>
-              <Protected />
-            </IsPrivate>
-          }
-        />
         <Route
           path="/login"
           element={
@@ -42,10 +33,24 @@ function App() {
             </IsAnon>
           }
         />
-        <Route path="/events" element={<EventsList />} />
-        <Route path="/events/add" element={<EventAdd />} />
-        <Route path="/events/:id" element={<EventDetails />} />
-        <Route path="/events/:id/edit" element={<EventEdit />} />
+        <Route
+          path="/events"
+          element={
+            <IsPrivate>
+              <EventsList />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/events/add"
+          element={
+            <IsPrivate>
+              <EventAdd />
+            </IsPrivate>
+          }
+        />
+        <Route path="/events/:eventId" element={<IsPrivate><EventDetails /></IsPrivate>} />
+        <Route path="/events/:eventId/edit" element={<EventEdit />} />
 
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>

@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import { AuthContext } from './../context/auth.context';
+// import { useContext } from 'react';
+// import { AuthContext } from './../context/auth.context';
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
   // the values from AuthContext.Provider `value` prop
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  // const { isLoggedIn, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav>
-      <Link to="/">
-        <button>Navbar</button>
+    <nav className="flex justify-between item-center h-16 bg-grey text-black  shadow-sm font-mono fixed bottom-0">
+      <Link to="/events" className="pl-3">
+        <button>Events Collection</button>
       </Link>
 
-      {isLoggedIn && (
+      <Link to="/events/add" className="pl-8">
+        <button>Add Event</button>
+      </Link>
+
+      {/* {isLoggedIn && (
         <>
           <Link to="/protected">
             <button>Protected</button>
@@ -35,7 +39,7 @@ function Navbar() {
             <button>Login</button>{' '}
           </Link>
         </>
-      )}
+      )} */}
     </nav>
   );
 }

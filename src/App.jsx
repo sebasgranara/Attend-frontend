@@ -12,6 +12,8 @@ import EventDetails from './pages/EventDetails';
 import EventEdit from './pages/EventEdit';
 
 function App() {
+
+  
   return (
     <AuthProviderWrapper>
       <Navbar />

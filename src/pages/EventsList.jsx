@@ -20,7 +20,7 @@ function EventsList() {
   //si ticketPurchased: No => pintarlo de rojo
   return (
     <div>
-      <h1>Welcome {user && user.name}</h1>
+      <h1>Welcome {user && user.name}!</h1>
       
       <h2>Upcoming Events</h2>
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import apiService from '../services/api.service';
 
 function EventEdit() {
@@ -100,7 +100,6 @@ return (
 
       <button type="submit">Save Changes</button>
 
-      <Link to="/events"> Back to events list</Link>
     </form>
   </div>
 );

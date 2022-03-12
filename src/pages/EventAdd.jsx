@@ -37,10 +37,10 @@ function EventAdd() {
     <div>
       <h2> Add your new event</h2>
       <form onSubmit={handleSubmit}>
-        <h2>Title:</h2>
+        <h3>Title:</h3>
         <input type="text" value={title} name="title" onChange={e => setTitle(e.target.value)}></input>
 
-        <h2>Category:</h2>
+        <h3>Category:</h3>
         <select name="category" value={category} onChange={e => setCategory(e.target.value)}>
           <option value="Festival">Festival</option>
           <option value="Business">Business</option>
@@ -51,13 +51,13 @@ function EventAdd() {
           <option value="Other">Other</option>
         </select>
 
-        <h2>Date:</h2>
+        <h3>Date:</h3>
         <input type="datetime-local" value={date} name="date" onChange={e => setDate(e.target.value)}></input>
 
-        <h2>City:</h2>
+        <h3>City:</h3>
         <input type="text" value={city} name="city" onChange={e => setCity(e.target.value)}></input>
 
-        <h2>Ticket Price:</h2>
+        <h3>Ticket Price:</h3>
         <input
           type="number"
           value={ticketPrice}
@@ -65,14 +65,14 @@ function EventAdd() {
           onChange={e => setTicketPrice(e.target.value)}
         ></input>
 
-        <h2>Priority:</h2>
+        <h3>Priority:</h3>
         <select name="priority" value={priority} onChange={e => setPriority(e.target.value)}>
           <option value="High">High</option>
           <option value="Medium">Medium</option>
           <option value="Low">Low</option>
         </select>
 
-        <h2>Ticket Purchased:</h2>
+        <h3>Ticket Purchased:</h3>
         <select name="ticketPurchased" value={ticketPurchased} onChange={e => setTicketPurchased(e.target.value)}>
           <option value="No">No</option>
           <option value="Yes">Yes</option>

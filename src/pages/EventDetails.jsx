@@ -43,7 +43,7 @@ function EventDetails() {
         <Link to={`/events/${event._id}/edit`}>Edit event</Link>
         <button onClick={deleteEvent}>Delete Event</button>
 
-        <Link to="/events"> Back to events list</Link>
+    
       </div>
     </div>
   );

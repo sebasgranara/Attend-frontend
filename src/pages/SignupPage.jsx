@@ -35,24 +35,30 @@ function SignupPage() {
 
   return (
     <div className="SignupPage">
-      <h1>Attend</h1>
-      <h2> Sign up to join us</h2>
+      <h1 className="title">Attend</h1>
+      <h3> Sign up to join us</h3>
+      <div>
+        <ul className="line"></ul>
+        {/* <li id="to-center">
+          <a href="/signup"> Join Us</a> <span> | </span>
+          <a href="/login"> Log In </a> <span> </span>
+        </li> */}
+      </div>
+      
 
-      <form onSubmit={handleSignupSubmit}>
+      <form className="authform" onSubmit={handleSignupSubmit}>
+        <label>Name:</label>
+        <input type="text" name="name" value={name} onChange={handleName} placeholder="enter your name" />
+
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <input type="email" name="email" value={email} onChange={handleEmail} placeholder="example@attend.com" />
 
         <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} />
-
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <input type="password" name="password" value={password} onChange={handlePassword} placeholder="******" />
 
         <button type="submit">Create account</button>
       </form>
-
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
       <p>Already have account?</p>
       <Link to={'/login'}> Login</Link>
     </div>

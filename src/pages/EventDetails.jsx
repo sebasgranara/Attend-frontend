@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import apiService from '../services/api.service';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function EventDetails() {
   const { eventId } = useParams();
@@ -27,11 +27,19 @@ function EventDetails() {
       .catch(err => console.log(err));
   };
 
+    const editEvent = () => {
+      apiService
+        .getEventById(eventId)
+        .then(() => {
+          navigate(`/events/${event._id}/edit`);
+        })
+        .catch(err => console.log(err));
+    };
 
   return (
     <div>
       <h1>About this Event</h1>
-      <div key={event._id}>
+      <div className="authform" key={event._id}>
         <h2>{event.title}</h2>
         <p>Category: {event.category}</p>
         <p>Date: {new Date(event.date).toLocaleDateString()}</p>
@@ -40,10 +48,10 @@ function EventDetails() {
         <p>Priority: {event.priority}</p>
         <p>Ticket Purchased: {event.ticketPurchased}</p>
         <p>Event Hour: {new Date(event.date).toLocaleTimeString()}</p>
-        <Link to={`/events/${event._id}/edit`}>Edit event</Link>
+        <button className="authform" onClick={editEvent}>
+          Edit event
+        </button>
         <button onClick={deleteEvent}>Delete Event</button>
-
-    
       </div>
     </div>
   );

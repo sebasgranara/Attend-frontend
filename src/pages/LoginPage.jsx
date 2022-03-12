@@ -31,10 +31,19 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <h1>Attend</h1>
+      <h1 className="title">Attend</h1>
+
       <h3>Login to access your EVENTS </h3>
 
-      <form onSubmit={handleLoginSubmit}>
+      <div>
+        <ul className="line"></ul>
+        {/* <li id="to-center">
+          <a href="/signup"> Join Us</a> <span> | </span>
+          <a href="/login"> Log In </a> <span> </span>
+        </li> */}
+      </div>
+
+      <form className="authform" onSubmit={handleLoginSubmit}>
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 

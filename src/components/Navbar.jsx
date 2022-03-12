@@ -1,6 +1,7 @@
 import { NavLink,  } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../context/auth.context';
+import '../css/attend.css';
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -50,6 +51,8 @@ function Navbar() {
       </div>
 
       {isLoggedIn && (
+
+        
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"

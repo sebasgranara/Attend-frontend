@@ -60,11 +60,11 @@ function EventEdit() {
 return (
   <div>
     <h2> Edit this event</h2>
-    <form onSubmit={handleSubmit}>
-      <h2>Title:</h2>
+    <form className="authform" onSubmit={handleSubmit}>
+      <h3>Title:</h3>
       <input type="text" value={event.title} name="title" onChange={handleChange}></input>
 
-      <h2>Category:</h2>
+      <h3>Category:</h3>
       <select name="category" value={event.category} onChange={handleChange}>
         <option value="Festival">Festival</option>
         <option value="Business">Business</option>
@@ -75,23 +75,23 @@ return (
         <option value="Other">Other</option>
       </select>
 
-      <h2>Date:</h2>
+      <h3>Date:</h3>
       <input type="datetime-local" value={event.date} name="date" onChange={handleChange}></input>
 
-      <h2>City:</h2>
+      <h3>City:</h3>
       <input type="text" value={event.city} name="city" onChange={handleChange}></input>
 
-      <h2>Ticket Price:</h2>
+      <h3>Ticket Price:</h3>
       <input type="number" value={event.ticketPrice} name="ticketPrice" onChange={handleChange}></input>
 
-      <h2>Priority:</h2>
+      <h3>Priority:</h3>
       <select name="priority" value={event.priority} onChange={handleChange}>
         <option value="High">Top Priority</option>
         <option value="Medium">Must Go</option>
         <option value="Low">Maybe</option>
       </select>
 
-      <h2>Ticket Purchased:</h2>
+      <h3>Ticket Purchased:</h3>
       <select name="ticketPurchased" value={event.ticketPurchased} onChange={handleChange}>
         <option value="Yes">Yes</option>
         <option value="No">No</option>

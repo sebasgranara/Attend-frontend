@@ -1,6 +1,6 @@
 import { NavLink,  } from 'react-router-dom';
 import { useContext } from 'react';
-import { AuthContext } from './../context/auth.context';
+import { AuthContext } from '../context/auth.context';
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -8,7 +8,7 @@ function Navbar() {
   const { isLoggedIn, logOutUser,  } = useContext(AuthContext);
 
   return (
-    <nav>
+    <nav className="navBar">
       <div>
         <NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="/events" end>
           <svg
@@ -65,7 +65,7 @@ function Navbar() {
               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
             />
           </svg>
-          <button className="nav_text" onClick={logOutUser}>
+          <button  onClick={logOutUser}>
             Logout
           </button>
         </div>

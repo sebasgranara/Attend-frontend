@@ -48,7 +48,7 @@ function EventDetails() {
         <p>Priority: {event.priority}</p>
         <p>Ticket Purchased: {event.ticketPurchased}</p>
         <p>Event Hour: {new Date(event.date).toLocaleTimeString()}</p>
-        <button className="authform" onClick={editEvent}>
+        <button  onClick={editEvent}>
           Edit event
         </button>
         <button onClick={deleteEvent}>Delete Event</button>

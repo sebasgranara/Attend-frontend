@@ -35,7 +35,7 @@ function EventAdd() {
 
   return (
     <div>
-      <h2> Add your new event</h2>
+      <h2 className="title-centered"> Add your new event</h2>
       <form className="authform" onSubmit={handleSubmit}>
         <h3>Title:</h3>
         <input type="text" value={title} name="title" onChange={e => setTitle(e.target.value)}></input>

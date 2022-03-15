@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 
+
 function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,17 +35,17 @@ function SignupPage() {
   };
 
   return (
-    <div className="SignupPage">
-      <h1 className="title">Attend</h1>
-      <h3> Sign up to join us</h3>
+    <div>
+      <h1 className="title-centered">Attend</h1>
+      {/* <div>
+        <img src="/src/pics/Main.jpeg" alt="mainpic"> </img>
+      </div> */}
+
+      <h2> Create your events wishlist and keep track of them</h2>
+      <h3 className="title-centered "> Sign up to join us</h3>
       <div>
         <ul className="line"></ul>
-        {/* <li id="to-center">
-          <a href="/signup"> Join Us</a> <span> | </span>
-          <a href="/login"> Log In </a> <span> </span>
-        </li> */}
       </div>
-      
 
       <form className="authform" onSubmit={handleSignupSubmit}>
         <label>Name:</label>
@@ -59,8 +60,11 @@ function SignupPage() {
         <button type="submit">Create account</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <p>Already have account?</p>
-      <Link to={'/login'}> Login</Link>
+      <div className="title-centered">
+        <p>Already have account?</p>
+        <Link to={'/login'}> Click here to Login</Link>
+      </div>
+      
     </div>
   );
 }

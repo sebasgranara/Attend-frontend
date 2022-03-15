@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 
@@ -53,9 +52,11 @@ function LoginPage() {
         <button type="submit">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Dont have an account yet?</p>
-      <Link to={'/signup'}> Sign Up</Link>
+      <div className='title-centered'>  
+        <p>Dont have an account yet?</p>
+        <Link to={'/signup'}> Click here to Sign Up</Link>
+      </div>
+    
     </div>
   );
 }

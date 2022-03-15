@@ -1,14 +1,22 @@
+import { useState } from 'react';
 import React from 'react';
 
 function SearchBar({ handleInput }) {
-  const handleValue = (e) => {
+  const [input, setInput] = useState('');
+
+  const handleValue = e => {
+    setInput(e.target.value);
     handleInput(e.target.value);
   };
 
   return (
     <div>
-      <label>Search</label>
-      <input type="text" onChange={handleValue} />
+      <input 
+        className="searchBar"
+        type="text" 
+        value={input} 
+        placeholder="Find events..." 
+        onChange={handleValue} />
     </div>
   );
 }

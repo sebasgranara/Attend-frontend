@@ -18,14 +18,16 @@
 .title {
   color: hsl(219, 72%, 30%);
   display: inline-block;
-  margin-bottom: 10px;
+  /* margin-bottom: 5px; */
   text-align: center;
+  font-weight: bold;
 }
 
 .authform {
   /* margin: 60px auto; */
   max-width: 100%;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .authform label {
@@ -34,9 +36,11 @@
   margin-bottom: 10px;
   text-align: center;
   width: 100%;
+  border-radius: 5px;
 }
 
 .authform input,
+.authform select,
 .authform button {
   box-sizing: border-box;
   font-size: 14px;
@@ -44,6 +48,7 @@
   padding: 4px;
   width: 100%;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .authform button {
@@ -72,14 +77,9 @@
 
 .line {
   border-bottom: 2px solid #444444;
-  height: 30px;
-  padding: 1em 0;
-  list-style-type: none;
+  height: 20px;
 }
 
-.line li {
-  line-height: 20px;
-}
 
 #to-right {
   padding: 1.5em;
@@ -111,14 +111,44 @@
   background-color: white;
 }
 
-nav__icon {
-  font-size: 18px;
+.no {
+  /* background-color: red; */
+  color: red;
+  font-weight:bolder;
 }
 
-icon-container {
-  width: 30%;
+b {
+  color: hsl(219, 72%, 30%)
 }
-.no {
-  background-color: red;
-  color: white;
+
+.searchBar {
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+
+#event-container {
+  margin-top: 18px;
+}
+
+.title-centered {
+  text-align: center;
+}
+
+.event-container button {
+  background-color:rgb(224, 228, 230);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 3px;
+}
+
+#text{
+  padding: 10px;
+
+} 
+
+p {
+  margin-bottom: 5px ;
 }

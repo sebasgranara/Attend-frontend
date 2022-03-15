@@ -29,6 +29,7 @@ function EventsList() {
   const [category, setCategory] = useState('All');
   const { user } = useContext(AuthContext);
 
+  // Display all events
   useEffect(() => {
     apiService
       .getAllEvents()
@@ -39,6 +40,8 @@ function EventsList() {
         console.log(err);
       });
   }, []);
+
+  // Category filter
   useEffect(() => {
     if (category === 'All') {
       setCurrentEvents(events);
@@ -48,22 +51,31 @@ function EventsList() {
       setCurrentEvents([...filterEvents]);
     }
   }, [category, events]);
-  const handleInput = searchTerm => {
-    if (searchTerm === '') {
+
+  // Search Bar
+  const handleInput = search => {
+    if (search === '') {
       setEvents(events);
     } else {
-      setEvents(events.filter(event => event.title.toLowerCase().includes(searchTerm.toLowerCase())));
+      setEvents(
+        events.filter(event =>
+          event.title.toLowerCase().includes(search.toLowerCase())
+         )
+      );
     }
   };
 
-  //si ticketPurchased: No => pintarlo de rojo
   return (
-    <div className="container">
-      <h1>Welcome {user && user.name}!</h1>
+    <div id="event-container">
+      <h1 className="title-centered">Welcome {user && user.name}!</h1>
 
-      <h2>These are your {events.length} upcoming Events:</h2>
-      <SearchBar handleInput={handleInput} />
-      <nav>
+      <h2 id="event-container">
+        These are your <b>{events.length}</b> upcoming Events:
+      </h2>
+
+      <SearchBar className="event-container" handleInput={handleInput} />
+
+      <nav className="event-container">
         <button className={category === 'All' ? 'active' : null} onClick={() => setCategory('All')}>
           All
         </button>
@@ -91,17 +103,16 @@ function EventsList() {
       </nav>
       {currentEvents.map(event => {
         return (
-          <div key={event._id}>
+          <div id="event-container" key={event._id}>
             <Link to={`/events/${event._id}`}>
-              <h2>{event.title}</h2>
-               <img src={categories[event.category]} alt={event.category} />
-              <h3>Date: {new Date(event.date).toLocaleDateString()}</h3>
-              <h3>Where: {event.city}</h3>
-              <h3>
+              <h2 className="title">{event.title}</h2>
+              <img src={categories[event.category]} alt={event.category} />
+              <p>Date: {new Date(event.date).toLocaleDateString()}</p>
+              <p>Where: {event.city}</p>
+              <p>
                 Ticket Purchased?{' '}
                 <span className={ticketPurchasedOptions[event.ticketPurchased]}>{event.ticketPurchased}</span>
-              </h3>
-             
+              </p>
             </Link>
           </div>
         );

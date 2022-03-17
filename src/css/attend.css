@@ -135,6 +135,7 @@ b {
 
 .title-centered {
   text-align: center;
+  margin: 30px;
 }
 
 .event-container button {
@@ -151,4 +152,9 @@ b {
 
 p {
   margin-bottom: 5px ;
+}
+
+.colored {
+   color: hsl(219, 72%, 30%);
+   font-weight: bold;
 }

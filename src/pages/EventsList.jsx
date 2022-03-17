@@ -25,9 +25,9 @@ const ticketPurchasedOptions = {
 
 function EventsList() {
   const [events, setEvents] = useState([]);
-  const [currentEvents, setCurrentEvents] = useState([]);
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState('all');
   const { user } = useContext(AuthContext);
+  const [query, setQuery] = useState('');
 
   // Display all events
   useEffect(() => {
@@ -40,30 +40,15 @@ function EventsList() {
         console.log(err);
       });
   }, []);
-
-  // Category filter
-  useEffect(() => {
-    if (category === 'All') {
-      setCurrentEvents(events);
-      return;
-    } else {
-      const filterEvents = events.filter(event => event.category === category);
-      setCurrentEvents([...filterEvents]);
-    }
-  }, [category, events]);
-
+  
   // Search Bar
   const handleInput = search => {
-    if (search === '') {
-      setEvents(events);
-    } else {
-      setEvents(
-        events.filter(event =>
-          event.title.toLowerCase().includes(search.toLowerCase())
-         )
-      );
-    }
+    setQuery(search);
   };
+
+  const categorizedEvents = events.filter(event => (category === 'all' ? event : event.category === category));
+
+  const filteredEvents = categorizedEvents.filter(event => event.title.toLowerCase().includes(query.toLowerCase()));
 
   return (
     <div id="event-container">
@@ -76,7 +61,7 @@ function EventsList() {
       <SearchBar className="event-container" handleInput={handleInput} />
 
       <nav className="event-container">
-        <button className={category === 'All' ? 'active' : null} onClick={() => setCategory('All')}>
+        <button className={category === 'all' ? 'active' : null} onClick={() => setCategory('all')}>
           All
         </button>
         <button className={category === 'Festival' ? 'active' : null} onClick={() => setCategory('Festival')}>
@@ -101,7 +86,8 @@ function EventsList() {
           Other
         </button>
       </nav>
-      {currentEvents.map(event => {
+      
+      {filteredEvents.map(event => {
         return (
           <div id="event-container" key={event._id}>
             <Link to={`/events/${event._id}`}>

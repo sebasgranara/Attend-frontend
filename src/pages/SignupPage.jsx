@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
-
-
+// import main from '../pics/Main.jpeg'
+ 
 function SignupPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,12 +36,12 @@ function SignupPage() {
 
   return (
     <div>
-      <h1 className="title-centered">Attend</h1>
+      <h1 className="title-centered colored">ATTEND</h1>
       {/* <div>
-        <img src="/src/pics/Main.jpeg" alt="mainpic"> </img>
+        <img src={main} alt="mainpic"> </img>
       </div> */}
 
-      <h2> Create your events wishlist and keep track of them</h2>
+      <h3> Create your events wishlist and keep track of them</h3>
       <h3 className="title-centered "> Sign up to join us</h3>
       <div>
         <ul className="line"></ul>

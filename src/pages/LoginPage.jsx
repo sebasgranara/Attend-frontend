@@ -30,7 +30,7 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
-      <h1 className="title">Attend</h1>
+      <h1 className="title-centered colored">ATTEND</h1>
 
       <h3>Login to access your EVENTS </h3>
 
@@ -52,11 +52,10 @@ function LoginPage() {
         <button type="submit">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-      <div className='title-centered'>  
+      <div className="title-centered">
         <p>Dont have an account yet?</p>
         <Link to={'/signup'}> Click here to Sign Up</Link>
       </div>
-    
     </div>
   );
 }

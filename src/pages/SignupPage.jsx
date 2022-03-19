@@ -41,8 +41,8 @@ function SignupPage() {
         <img src={main} alt="mainpic"> </img>
       </div> */}
 
-      <h3> Create your events wishlist and keep track of them</h3>
-      <h3 className="title-centered "> Sign up to join us</h3>
+      <h3 className="cursiva"> Create your events wishlist and keep track of them</h3>
+      <h3 className="centered"> Sign up to join us</h3>
       <div>
         <ul className="line"></ul>
       </div>

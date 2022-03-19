@@ -118,7 +118,7 @@
 }
 
 b {
-  color: hsl(219, 72%, 30%)
+  color: hsl(202, 83%, 49%)
 }
 
 .searchBar {
@@ -135,7 +135,7 @@ b {
 
 .title-centered {
   text-align: center;
-  margin: 30px;
+  margin: 20px;
 }
 
 .event-container button {
@@ -157,4 +157,13 @@ p {
 .colored {
    color: hsl(219, 72%, 30%);
    font-weight: bold;
+}
+
+.centered {
+   text-align: center;
+    margin-top: 30px; 
+}
+
+.cursiva {
+  font-style: italic;
 }

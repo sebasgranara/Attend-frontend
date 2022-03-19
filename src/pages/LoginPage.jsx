@@ -32,7 +32,7 @@ function LoginPage() {
     <div className="LoginPage">
       <h1 className="title-centered colored">ATTEND</h1>
 
-      <h3>Login to access your EVENTS </h3>
+      <h3 className="centered">Login to access your EVENTS </h3>
 
       <div>
         <ul className="line"></ul>

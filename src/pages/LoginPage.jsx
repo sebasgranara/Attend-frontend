@@ -36,10 +36,6 @@ function LoginPage() {
 
       <div>
         <ul className="line"></ul>
-        {/* <li id="to-center">
-          <a href="/signup"> Join Us</a> <span> | </span>
-          <a href="/login"> Log In </a> <span> </span>
-        </li> */}
       </div>
 
       <form className="authform" onSubmit={handleLoginSubmit}>

@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
-// import main from '../pics/Main.jpeg'
  
 function SignupPage() {
   const [email, setEmail] = useState('');
@@ -18,12 +17,9 @@ function SignupPage() {
 
   const handleSignupSubmit = e => {
     e.preventDefault();
-    // Create an object representing the request body
+   
     const requestBody = { email, password, name };
 
-    // Make an axios request to the API
-    // If POST request is successful redirect to login page
-    // If the request resolves with an error, set the error message in the state``
     signup(requestBody)
       .then(() => {
         navigate('/login');
@@ -37,9 +33,6 @@ function SignupPage() {
   return (
     <div>
       <h1 className="title-centered colored">ATTEND</h1>
-      {/* <div>
-        <img src={main} alt="mainpic"> </img>
-      </div> */}
 
       <h3 className="cursiva"> Create your events wishlist and keep track of them</h3>
       <h3 className="centered"> Sign up to join us</h3>

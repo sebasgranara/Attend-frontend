@@ -8,6 +8,8 @@ import cultural from '../pics/Cultural.jpeg';
 import festival from '../pics/Festival.jpeg';
 import sports from '../pics/Sports.png';
 import wellness from '../pics/Wellness.jpeg';
+import personal from '../pics/Personal.jpeg';
+import other from '../pics/Other.jpeg';
 
 const categories = {
   Business: business,
@@ -15,6 +17,8 @@ const categories = {
   Festival: festival,
   Sports: sports,
   Wellness: wellness,
+  Personal: personal,
+  Other: other,
 };
 
 const ticketPurchasedOptions = {
